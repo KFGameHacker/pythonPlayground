@@ -31,3 +31,8 @@ def tag_version(version):
 def fetch_version(version):
     "Fetch Git Version"
     local('wget https://github.com/KFGameHacker/pythonPlayground/archive/%s.zip'%version)
+
+@task
+def test():
+    """ RUN TEST """
+    local("./manage.py test")
