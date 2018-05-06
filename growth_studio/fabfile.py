@@ -1,10 +1,12 @@
 from fabric.api import local 
 from fabric.decorators import task
+import webbrowser
 
 @task
-def runserver():
+def r():
     """RUN SERVER"""
     local("./manage.py runserver")
+    webbrowser.open_new_tab('http://127.0.0.1:8000/')
 
 @task
 def install(requirements_env="dev"):
