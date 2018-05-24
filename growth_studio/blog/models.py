@@ -22,3 +22,4 @@ class Blog(models.Model):
     @permalink
     def get_absolute_url(self):
         return 'blog_view', None, {'slug': self.slug}
+
