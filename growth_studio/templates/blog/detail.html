@@ -1,16 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ blog.title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-</head>
-<body>
-    <h2>{{ blog.title }}</h2>
-    <p>{{ blog.body }}</p>
-    <p>{{ blog.posetd }} - By {{ blog.author }}</p>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container blog-list">
+    <div class="row">
+        <article>
+            <div>
+                <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                {{post.posted}} - By {{post.author}}
+            </div>
+
+            <p>{{post.body}}</p>
+        </article>
+    </div>
+</div>
+{% endblock %}
+
